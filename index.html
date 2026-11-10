@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projektübersicht aus der Umschulung zum Fachinformatiker für Systemintegration">
+  <title>Projektportfolio – pyton10-pixel</title>
+  <style>
+    :root {
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text: #0f172a;
+      --color-muted: #64748b;
+      --color-accent: #4f46e5;
+      --color-accent-text: #ffffff;
+      --color-border: #e2e8f0;
+      --color-tag: #eef2ff;
+      --color-tag-text: #3730a3;
+      --color-wait: #fef3c7;
+      --color-wait-text: #92400e;
+      --radius: 0.75rem;
+      --shadow: 0 1px 3px rgb(0 0 0 / 0.08), 0 8px 24px rgb(0 0 0 / 0.06);
+      --space: clamp(1rem, 2vw + 0.5rem, 2rem);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0b1120;
+        --color-surface: #111827;
+        --color-text: #e5e7eb;
+        --color-muted: #94a3b8;
+        --color-accent: #818cf8;
+        --color-accent-text: #0b1120;
+        --color-border: #1f2937;
+        --color-tag: #1e1b4b;
+        --color-tag-text: #c7d2fe;
+        --color-wait: #422006;
+        --color-wait-text: #fcd34d;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    .container {
+      max-width: 72rem;
+      margin-inline: auto;
+      padding-inline: var(--space);
+    }
+
+    /* Kopfbereich */
+    .site-header {
+      padding-block: clamp(2.5rem, 6vw, 5rem) var(--space);
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--color-accent);
+    }
+
+    h1 {
+      margin: 0.25rem 0 0.75rem;
+      font-size: clamp(1.75rem, 3vw + 1rem, 3rem);
+      line-height: 1.2;
+    }
+
+    .lead {
+      max-width: 42rem;
+      margin: 0;
+      font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+      color: var(--color-muted);
+    }
+
+    /* Projektkarten */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+      gap: var(--space);
+      padding-block: var(--space) clamp(2.5rem, 6vw, 5rem);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: var(--space);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 0.15rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      color: var(--color-tag-text);
+      background: var(--color-tag);
+    }
+
+    .status {
+      align-self: flex-start;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      color: var(--color-wait-text);
+      background: var(--color-wait);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--color-accent);
+      border-radius: 0.5rem;
+      color: var(--color-accent);
+      transition: color 0.2s, background-color 0.2s;
+    }
+
+    .button:hover,
+    .button.primary {
+      color: var(--color-accent-text);
+      background: var(--color-accent);
+    }
+
+    .button.primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Fußbereich */
+    .site-footer {
+      padding-block: var(--space);
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .site-footer a {
+      color: var(--color-accent);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header container">
+    <p class="eyebrow">~/projekte $ ls</p>
+    <h1>Projektportfolio</h1>
+    <p class="lead">
+      Projekte aus meiner Umschulung zum Fachinformatiker für Systemintegration (DAA):
+      von HTML/CSS über JavaScript bis zu PHP auf der Konsole.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="projects" aria-label="Projekte">
+      <article class="card">
+        <h2>Barrista 88</h2>
+        <p>Simulation einer Kaffeemaschine im Browser mit Bedienfeld, Füllständen und Zubereitungslogik.</p>
+        <ul class="tags">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <div class="links">
+          <a class="button primary" href="https://pyton10-pixel.github.io/barrista88/">Demo</a>
+          <a class="button" href="https://github.com/pyton10-pixel/barrista88">Code</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Kalkulator</h2>
+        <p>Taschenrechner mit den Grundrechenarten, umgesetzt mit HTML, CSS und JavaScript.</p>
+        <ul class="tags">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <div class="links">
+          <a class="button primary" href="https://pyton10-pixel.github.io/kalkulator/">Demo</a>
+          <a class="button" href="https://github.com/pyton10-pixel/kalkulator">Code</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>PowerTech Energiesysteme</h2>
+        <p>Gruppenprojekt: Website eines fiktiven Energieversorgers. Mein Teil ist die Seite zum Energieverbrauch.</p>
+        <ul class="tags">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Teamarbeit</li>
+        </ul>
+        <div class="links">
+          <a class="button" href="https://github.com/pyton10-pixel/Powertech">Code</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Geräteverwaltung</h2>
+        <p>Menügesteuerte Konsolenanwendung: Gerätegruppen mit eigenen Zusatzfeldern, Bestände, Speichern und Laden mit CSV.</p>
+        <ul class="tags">
+          <li>PHP</li>
+          <li>CLI</li>
+          <li>CSV</li>
+        </ul>
+        <span class="status">Code folgt</span>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Alle Projekte auf <a href="https://github.com/pyton10-pixel">GitHub</a>.
+    </div>
+  </footer>
+</body>
+</html>
